@@ -1,3 +1,29 @@
+import sqlite3
+import xml.etree.ElementTree as ET
+
+conn = sqlite3.connect('Books2021.sqlite')
+cur = conn.cursor()
+
+cur.executescript(
+    '''
+    DROP TABLE IF EXIST Author;
+    DROP TABLE IF EXIST Genre;
+    DROP TABLE IF EXIST Pages;
+    DROP TABLE IF EXIST Book;
+
+    CREATE TABLE Author (
+        id INTEGER NOT FULL PRIMARY KEY AUTOINCREMENT
+        name TEXT UNIQUE
+        
+    );
+
+    CREATE TABLE Genre (
+        id INTEGER NOT FULL PRIMARY KEY AUTOINCREMENT
+        name TEXT UNIQUE
+    );
+    '''
+)
+
 books_2021 = ['The Power of Now', 'The lost Hero', 'The Son of Neptune', 'The Guest List', 'Mistborn 1 The Final Empire', 'The Midnight Library' , 'Mistborn 2 The Well of Ascension'  ]
 dict_books = dict ()
 count = 0
