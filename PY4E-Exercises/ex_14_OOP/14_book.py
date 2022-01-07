@@ -6,9 +6,9 @@ print(stuff[0])
 
 print (stuff.__getitem__(0))
 print(list.__getitem__(stuff,0))
-# -------------------
+# ------------------------------------------------------------------------------------------
 # These 3 prints statements above or line of code are the same things, print the same result
-# --------------------
+# ------------------------------------------------------------------------------------------
 dir(stuff)
 """
 An object can contain a number of functions (which we call "methods") as well as data
